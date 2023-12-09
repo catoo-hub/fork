@@ -1,0 +1,106 @@
+/**
+ * @name vacban.wtf
+ * @description A darkened discord theme in the style of vacban.wtf
+ * @author ISOPISO
+ * @website https://vacban.wtf
+ * @version 1.2
+ * @source https://github.com/ISOPISO/vacban.wtf
+ * @authorId 721129414364102707
+*/
+
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!! */
+
+@import url('https://isopiso.github.io/vacban-theme/vacban.css');
+
+/* customize things here */
+:root {
+	/* font, change to 'gg sans' for default discord font*/
+	--font: 'figtree';
+
+	/* color of green online dot, change to #23a55a for default green */
+	--online-indicator: var(--accent-2);
+
+	/* top left icon */
+	--bolt-icon: block; /* change to none to hide bolt icon */
+	--discord-icon: none; /* change to block to show default discord icon */
+
+	/* amount of spacing and padding */
+	--spacing: 12px;
+
+	/* roundness of big panel outer corners */
+	--roundness-xl: 22px;
+	/* popout panels */
+	--roundness-l: 20px;
+	/* smaller panels, images, embeds */
+	--roundness-m: 16px;
+	/* members, settings inputs */
+	--roundness-s: 12px;
+	/* channels, buttons*/
+	--roundness-xs: 10px;
+	/* searchbar, small elements */
+	--roundness-xxs: 8px;
+
+	/* color of links */
+	--accent-1: #2daac1;
+	/* color of unread dividers and some indicators */
+	--accent-2: #b243c8;
+	/* color of accented buttons */
+	--accent-3: #373650;
+	/* color of accented buttons when hovered */
+	--accent-4: hsla(320, 80%, 60%, 0.204);
+	/* color of accented buttons when clicked */
+	--accent-5: #1c1c1c;
+	/* color of mentions and messages that mention you */
+	--mention: hsla(320, 80%, 60%, 0.1);
+	/* color of mentions and messages that mention you when hovered */
+	--mention-hover: hsla(314, 80%, 52%, 0.05);
+
+	/* color of bright text on colored buttons */
+	--text-1: hsl(0, 0%, 87%);
+	/* color of headings and important text */
+	--text-2: hsl(0, 0%, 100%);
+	/* color of normal text */
+	--text-3: hsl(0, 0%, 100%);
+	/* color of icon buttons and channels */
+	--text-4: #999999;
+	/* color of muted channels/chats and timestamps */
+	--text-5: #626262;
+
+	/* color of dark buttons when clicked */
+	--bg-1: #151521;
+	/* color of dark buttons */
+	--bg-2: #151521;
+	/* color of spacing around panels and secondary elements */
+	--bg-3: #151521;
+	/* main background color */
+	--bg-4: #1e1e2d;
+	/* color of channels and icon buttons when hovered */
+	--hover: hsla(200, 23%, 25%, 0.1);
+	/* color of channels and icon buttons when clicked or selected */
+	--active: hsla(200, 23%, 25%, 0.1);
+	/* color of messages when hovered */
+	--message-hover: hsla(220, 0%, 0%, 0.1);
+}
+
+[class^='tutorialContainer'] svg [class^="wrapper"] > [class^="childWrapper"] img,
+[class^='tutorialContainer'] svg [class^="wrapper"] > [class^="childWrapper"] svg {
+	/* Hide the default icon. */
+	display: none;
+}
+[class^='tutorialContainer'] svg [class^="wrapper"] > [class^="childWrapper"]::after {
+	/* Create a new icon in its place. */
+	content: ' ';
+	display: block;
+	position: relative;
+	width: 42px;
+	height: 42px;
+	line-height: 32px;
+	opacity: 0.8;
+	transition: all 50ms linear;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/b/ba/Vb-logo.png') center / contain no-repeat;
+}
+[class^='tutorialContainer'] svg [class^="wrapper"]  > [class^="childWrapper"]:hover::after {
+	/* Transformations for hover effects go here. */
+	opacity: 1;
+	transform: scale(1.1) rotateZ(-10deg);
+}
